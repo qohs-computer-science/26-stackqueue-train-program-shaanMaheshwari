@@ -24,8 +24,7 @@ public class MyProgram {
 			x = new Scanner (f);
 			String name = x.nextLine();
 			System.out.println(name);
-			trainQ.add(name);
-			while (!trainQ.toLowerCase.equals("end")){
+			while (name.toLowerCase().equals("end")){
 				if(name.substring(0,3).equals("CAR")){
 					String name2 = x.nextLine();
 					String product = x.nextLine();
@@ -53,8 +52,8 @@ public class MyProgram {
 		Stack<Train> trackB = new Stack<>();
 		Stack<Train> trackC = new Stack<>();
 		Stack<Train> trackD = new Stack<>();
-		int weightA;
-		int weightB;
+		int weightA = 0;
+		int weightB = 0;
 		int weightC;
 
 		while(!trainQ.isEmpty()){
@@ -62,24 +61,57 @@ public class MyProgram {
 			if(car.getName().substring(0, 3).equals("CAR") && car.getMiles()> 700){
 				track1.push(car);
 				
-			} else if {
-				if(car.getDestination().equals("Trenton")){
+			} else if(car.getDestination().equals("Trenton")){
 					if(car.getName().substring(0,3).equals("CAR")){
 						if(weightA + car.getWeight() <= limitTrackA){
 							trackA.push(car);
 							trainQ.remove(car);
+							weightA += car.getWeight();
+						} else {
+							System.out.println("ENG00000 leaving for Trenton with cars: ");
+							while(!trackA.isEmpty()){
+								Train temp = trackA.pop();
+								System.out.println(temp.getName() + " containing " + temp.getProduct());
+							}
+							System.out.println("Sent out to Trenton");
+							trackA.push(car);
 						}
 						
 					} else {
-						trackA.push(car);
-						trainQ.remove(car);
+						while(!trackA.isEmpty()){
+							Train temp = trackA.pop();
+							System.out.println(temp.getName() + " leaving for " + temp.getDestination() + " with the following cars: ");
+						}
+					}
+
+
+
+				} else if(car.getDestination().equals("Charlotte")){
+					if(car.getName().substring(0,3).equals("CAR")){
+						if(weightB + car.getWeight() <= limitTrackB){
+							trackB.push(car);
+							trainQ.remove(car);
+							weightB += car.getWeight();
+						} else {
+							System.out.println("ENG00000 leaving for Trenton with cars: ");
+							while(!trackB.isEmpty()){
+								Train temp = trackB.pop();
+								System.out.println(temp.getName() + " containing " + temp.getProduct());
+							}
+							System.out.println("Sent out to Trenton");
+							trackA.push(car);
+						}
+						
+					} else {
+						while(!trackB.isEmpty()){
+							Train temp = trackB.pop();
+							System.out.println(temp.getName() + " leaving for " + temp.getDestination() + " with the following cars: ");
+						}
 					}
 				}
-			}
 
 
 		}
-
 
 
 	}
