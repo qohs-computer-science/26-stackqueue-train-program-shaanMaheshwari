@@ -6,7 +6,7 @@ public class Train {
         name = nombre;
         product = contents;
         origin = start;
-        destination = origin;
+        destination = city;
         weight = size;
         miles = distance;
     }
