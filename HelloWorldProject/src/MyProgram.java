@@ -1,8 +1,8 @@
 /*
- * TODO: Name
- * TODO: Date
- * TODO: Class Period
- * TODO: Program Description
+ * Shaan Maheshwari
+ * 1/27/25
+ * Pd. 3
+ * This program took input from a file and sorted it as trains with cars and engines. This also follows the restrictions given.
  */
 import java.util.Scanner;
 import java.io.File;
