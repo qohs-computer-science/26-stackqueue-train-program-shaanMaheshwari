@@ -38,15 +38,15 @@ public class MyProgram {
 					String dest = x.nextLine();
 					trainQ.add(new Train(name, dest));
 
-				}
+				}//end if else
 
 				name = x.nextLine();
-			}
-		}
+			}//end while
+		}//end try
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
-		}
+		}//end catch
 
 		Stack<Train> track1 = new Stack<>();
 		Stack<Train> trackA = new Stack<>();
@@ -75,7 +75,7 @@ public class MyProgram {
 							while(!trackA.isEmpty()){
 								Train temp = trackA.pop();
 								System.out.println(temp.getName() + " containing " + temp.getProduct() + " with " + temp.getMiles() + " miles");
-							}
+							}//end while
 							trackA.push(car);
 							System.out.println(weightA + " " + car.getWeight());
 
@@ -83,7 +83,7 @@ public class MyProgram {
 							System.out.println(weightA + " " + car.getWeight());
 							System.out.println("");
 
-						}
+						}//end if else
 						
 					} else {
 						System.out.println("Sent out to Trenton");
@@ -91,11 +91,11 @@ public class MyProgram {
 						while(!trackA.isEmpty()){
 								Train temp = trackA.pop();
 								System.out.println(temp.getName() + " containing " + temp.getProduct() + " with " + temp.getMiles() + " miles");
-						}
+						}//end while
 						System.out.println(weightA);
 						weightA = 0;
 						System.out.println("");
-					}
+					}//end if else
 					
 
 
@@ -110,24 +110,24 @@ public class MyProgram {
 							while(!trackB.isEmpty()){
 								Train temp = trackB.pop();
 								System.out.println(temp.getName() + " containing " + temp.getProduct() + " with " + temp.getMiles() + " miles");
-							}
+							}//end while
 							trackB.push(car);
 							System.out.println(weightB + " " + car.getWeight());
 							weightB = car.getWeight();
 							System.out.println(weightB + " " + car.getWeight());
 							System.out.println("");
-						}
+						}//end if else
 					} else {
 						System.out.println("Sent out to Charlotte");
 						System.out.println(car.getName() + " leaving for " + car.getDestination() + " with the following cars: ");
 						while(!trackB.isEmpty()){
 								Train temp = trackB.pop();
 								System.out.println(temp.getName() + " containing " + temp.getProduct() + " with " + temp.getMiles() + " miles");
-						}
+						}//end while
 						System.out.println(weightB);
 						weightB = 0;
 						System.out.println("");
-					}
+					}//end if else
 				} else if(car.getDestination().equals("Baltimore")){
 					if(car.getName().substring(0,3).equals("CAR")){
 						if(weightC + car.getWeight() <= limitTrackC){
@@ -139,7 +139,7 @@ public class MyProgram {
 							while(!trackC.isEmpty()){
 								Train temp = trackC.pop();
 								System.out.println(temp.getName() + " containing " + temp.getProduct() + " with " + temp.getMiles() + " miles");
-							}
+							}//end while
 							trackC.push(car);
 							System.out.println(weightC + " " + car.getWeight());
 
@@ -147,35 +147,35 @@ public class MyProgram {
 							System.out.println(weightC + " " + car.getWeight());
 							System.out.println("");
 
-						}
+						}//end if else
 					} else {
 						System.out.println("Sent out to Baltimore");
 						System.out.println(car.getName() + " leaving for " + car.getDestination() + " with the following cars: ");
 						while(!trackC.isEmpty()){
 							Train temp = trackC.pop();
 							System.out.println(temp.getName() + " containing " + temp.getProduct() + " with " + temp.getMiles() + " miles");
-						}
+						}//end while
 						weightC = 0;
 						System.out.println("");
-					}
+					}//end if else
 				} else {
 					trackD.push(car);
 					System.out.println("");
-				}
-			}
+				}//end if else
+			}//end if if else else
 			if(!trainQ.isEmpty() && counter == 0){
 				counter++;
 				while(!track1.isEmpty()){
 					trainQ.add(track1.pop());
-				}	
-			}
-		}
+				}//end while	
+			}//end if
+		}//end while
 
 		System.out.println("Trains leaving for other destinations: ");
 		while(!trackD.isEmpty()){
 			Train temp = trackD.pop();
 			System.out.println(temp.getName() + " containing " + temp.getProduct() + " with " + temp.getMiles() + " miles");
-		}
+		}//end while
 		System.out.println(""); 
-	}
-}
+	}//end main
+}//end class
